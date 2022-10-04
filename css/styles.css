@@ -5,6 +5,7 @@
     --white-text-color: #FFFFFF;
     --secondary-bg-color: #F5F4FA;
     --dark-bg-color: #2F303A;
+    --item-gap: 30px;
 }
 
 body {
@@ -37,6 +38,8 @@ ul {
 .container {
     margin-left: auto;
     margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
     width: 1200px;
 }
 
@@ -55,6 +58,10 @@ ul {
 
 /* Хедер */
 .header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.header .container {
     display: flex;
     align-items: center;
 
@@ -89,7 +96,7 @@ ul {
     align-items: center;
 }
 
-.navigation li:not(:last-child) {
+.navigation .item:not(:last-child) {
     margin-right: 50px;
 }
 
@@ -151,6 +158,7 @@ ul {
     background-color: var(--dark-bg-color);
     text-align: center;
     padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .hero-title {
@@ -170,7 +178,6 @@ ul {
 
 .hero-button {
     display: inline-block;
-    margin-bottom: 200px;
     padding: 10px 32px;
     border-radius: 4px;
     border-color: transparent;
@@ -194,10 +201,22 @@ ul {
 }
 
 /* Особливості & Чим ми займаємось */
+.features {
+    display: flex;
+}
+
+.features .item {
+    flex-basis: calc((100% - 90px) / 4);
+}
+
+.features .item:not(:last-child) {
+    margin-right: var(--item-gap);
+}
 
 .feature-title {
-    color: var(--secondary-text-color);
+    margin-bottom: 10px;
 
+    color: var(--secondary-text-color);
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -209,6 +228,8 @@ ul {
 }
 
 .section-title {
+    margin-bottom: 50px;
+
     color: var(--secondary-text-color);
     font-weight: 700;
     font-size: 36px;
@@ -216,17 +237,43 @@ ul {
     text-align: center;
 }
 
+.examples {
+    display: flex;
+}
+
+.examples .item:not(:last-child) {
+    margin-right: var(--item-gap);
+}
+
 /* Команда */
 
 .team {
     background-color: var(--secondary-bg-color);
+
+}
+
+.team .list {
+    display: flex;
 }
 
 .team-card {
     background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team-card:not(:last-child) {
+    margin-right: var(--item-gap);
+}
+
+.team-photo {
+    display: block;
+    margin-bottom: var(--item-gap);
 }
 
 .team-title {
+    margin-bottom: 10px;
+
     color: var(--secondary-text-color);
     font-weight: 500;
     font-size: 16px;
@@ -235,6 +282,8 @@ ul {
 }
 
 .team-position {
+    margin-bottom: var(--item-gap);
+
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
@@ -244,11 +293,23 @@ ul {
 /* Футер */
 
 .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
     background-color: var(--dark-bg-color);
+}
+
+.footer .logo {
+    margin-bottom: 20px;
+    padding: 0;
 }
 
 .light-logo {
     color: #FFFFFF;
+}
+
+
+.address .item:not(:last-child) {
+    margin-bottom: 9px;
 }
 
 .address a {
@@ -268,9 +329,21 @@ ul {
 }
 
 /* Портфоліо */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.buttons .item:not(:last-child) {
+    margin-right: 8px;
+}
 
 .button {
     display: inline-block;
+    padding: 6px 22px;
+    border-color: transparent;
+    border-radius: 4px;
 
     color: var(--secondary-text-color);
     background-color: var(--secondary-bg-color);
@@ -282,15 +355,48 @@ ul {
     line-height: 1.62;
     text-align: center;
     letter-spacing: 0.03em;
+
 }
+
 
 .button:hover,
 .button:focus {
+    padding: 6px 25px;
+
     color: var(--white-text-color);
     background-color: var(--accent-text-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-1 * var(--item-gap));
+    margin-bottom: calc(-1 * var(--item-gap));
+}
+
+.projects>.item {
+    flex-basis: calc(100% / 3 - var(--item-gap));
+    margin-right: var(--item-gap);
+    margin-bottom: var(--item-gap);
+}
+
+.project-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px 24px;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
 }
 
 .project-title {
+    margin-bottom: 4px;
+
     color: var(--secondary-text-color);
     font-weight: 700;
     font-size: 18px;
